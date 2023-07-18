@@ -2,12 +2,12 @@ from colorama import init as colorama_init
 from submodules import TextTools, Error
 from commands import Commands
 
-class FileManager:
+class FilesManager:
 
     @staticmethod
     def start():
-        FileManager.init()
-        FileManager.loop()
+        FilesManager.init()
+        FilesManager.loop()
 
     @staticmethod
     def init():
@@ -34,4 +34,4 @@ class FileManager:
 
     @staticmethod
     def loop():
-        while FileManager.run(input(TextTools.indicator())): pass
+        while FilesManager.run(input(TextTools.indicator())): pass

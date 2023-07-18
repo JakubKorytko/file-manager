@@ -1,3 +1,3 @@
-from module import FileManager
+from module import FilesManager
 
-FileManager.start()
+FilesManager.start()
