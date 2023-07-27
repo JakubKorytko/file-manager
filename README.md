@@ -23,7 +23,7 @@ With its intuitive and easy-to-use interface, files-manager is a great tool for 
 
 Before you can use files-manager, you must have the following installed on your machine:
 
-Python 3.6 or higher
+Python 3.10.2 or higher
 You can check if you have Python installed by running the following command in your terminal:
 
 ```bash
