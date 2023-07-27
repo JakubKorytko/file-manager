@@ -34,6 +34,8 @@ If you don't have Python installed, you can download it from the official websit
 
 # Installation
 
+**When installing (e.g. in the `pip install` step), you may need to run the console as administrator / root, depending on where you run it.**
+
 To install files-manager, follow these steps:
 
 1. Clone the repository to your local machine:
