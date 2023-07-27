@@ -5,7 +5,7 @@ import os
 
 class Commands:
 
-    list = data["commands"]
+    list = Config.data["commands"]
     
     @staticmethod
     def find(command):

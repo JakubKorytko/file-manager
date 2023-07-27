@@ -1,9 +1,9 @@
-from submodules.utils import TextTools, data
+from submodules.utils import TextTools, Config
 
 class Error:
 
-    commands = data["commands"]
-    genericCodes = data["genericErrorCodes"]
+    commands = Config.data["commands"]
+    genericCodes = Config.data["genericErrorCodes"]
 
     @staticmethod
     def generic(code, args={}):
