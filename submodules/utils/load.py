@@ -1,6 +1,6 @@
 """This module is used to read the config.json file and store it in a singleton class."""
-import os
-import json
+from os import path
+from json import load as json_file_load
 
 class Config:
     """Singleton class to load and store the config.json file"""
@@ -10,12 +10,12 @@ class Config:
 
     def load_data(self):
         """Loads the config.json file."""
-        script_dir = os.path.dirname(__file__)
+        script_dir = path.dirname(__file__)
         txt_path = "config.json"
-        file = os.path.join(script_dir, txt_path)
+        file = path.join(script_dir, txt_path)
 
         with open(file, "r", encoding="utf-8") as jsonFile:
-            self._data = json.load(jsonFile)
+            self._data = json_file_load(jsonFile)
             self.is_loaded = True
 
     def force_reload(self):
