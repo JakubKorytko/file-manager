@@ -22,14 +22,14 @@ class FilesManager:
         if (len(args) == 0): return 1
         command = args[0]
 
-        command_f = Commands.run(command)
+        command_function = Commands.run(command)
 
-        if (command_f == False):
+        if (command_function == False):
             error = Error.generic("unknownCommand", {"command": command})
             Error.display(error)
             return 1
 
-        command_f(args[1:])
+        command_function(args[1:])
         return 1
 
     @staticmethod
