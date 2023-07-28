@@ -89,9 +89,10 @@ You can also use aliases in the brackets for some of these commands. For example
 
 # Configuration
 
-files-manager comes with a configuration file called **config.json**. This file is located in the **/submodules/utils/config.json** path.
+files-manager comes with a configuration file called **config.json**. This file is located in the **/commands/logic/config.json** path.
 
 The config.json file allows you to customize files-manager by adding new commands, changing existing commands, or modifying error messages.
+(*Read more about this in the next section. You need to do more than just modify the config.json file to add a new command.*)
 
 The file consists of two sections:
 
@@ -174,7 +175,9 @@ Here's an example of config.json file:
 
 ### Adding new commands
 
-You can customize this file to better suit your needs. If you add a new command, you must also add a new static method to the **Commands** class in the **commands.py** file (main directory). This method must have the same name as the command you added to the config.json file.
+1. You need to add the command to the **/commands/logic/config.json** file. The command must have a unique name and a description of what it does. You can also add aliases for the command if you want to make it easier to use for users who are familiar with other command-line interfaces.
+2. You need to create a class to the **/commands/classes** directory. Name of the class must be the same as the name of the command in the config.json file. The class must derive from the **Command** class and implement the **main** method. The **main** method is called when the command is executed. It takes a list of arguments as a parameter and returns an integer. Look at the **/commands/classes/.example.py** file for an example of how to create a new command class.
+3. You need to add an import statement for the new command class to the **/commands/classes/__init__.py** file. This allows files-manager to find the class when it needs to execute the command.
 
 # License
 
