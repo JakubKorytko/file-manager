@@ -1,0 +1,4 @@
+[BASIC]
+# Variable names can't be too short, any variable name with less than 3 characters will trigger the warning.
+# But in our case, we need to use short variable names to preserve the logic of command names associated with functions.
+good-names=cd,md,cp,rm

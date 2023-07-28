@@ -21,14 +21,16 @@ class FilesManager:
     @staticmethod
     def run(cmnd):
         """Runs a command."""
-        args = TextTools.scrapArgs(cmnd)
+        args = TextTools.scrap_args(cmnd)
 
-        if (len(args) == 0): return 1
+        if len(args) == 0:
+            return 1
+
         command = args[0]
 
         command_function = Commands.run(command)
 
-        if (command_function == False):
+        if command_function is False:
             error = Error.generic("unknownCommand", {"command": command})
             Error.display(error)
             return 1
@@ -39,4 +41,6 @@ class FilesManager:
     @staticmethod
     def loop():
         """Main loop of the program."""
-        while FilesManager.run(input(TextTools.indicator())): pass
+
+        while FilesManager.run(input(TextTools.indicator())):
+            pass
