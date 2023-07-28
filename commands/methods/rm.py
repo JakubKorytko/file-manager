@@ -1,9 +1,12 @@
+"""This module contains the 'rm' command class."""
+
 from os import remove, path as os_path
-from submodules import TextTools, Error
 from shutil import rmtree
+from submodules import TextTools, Error
 from commands.command import Command
 
-class Main(Command):
+class Rm(Command):
+    """Class for the 'rm' command. Removes a file or directory."""
 
     @staticmethod
     def main(path):

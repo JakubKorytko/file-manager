@@ -1,7 +1,7 @@
 """Main module of the program, contains the main loop and the main function."""
 from colorama import init as colorama_init
 from submodules import TextTools, Error
-from commands import Commands
+from commands.commands import Commands
 
 class FilesManager:
     """Main class of the program."""

@@ -1,7 +1,10 @@
+"""This module contains the 'help' command class."""
+
 from submodules import TextTools
 from commands.command import Command
 
-class Main(Command):
+class Help(Command):
+    """Class for the 'help' command. Displays the help message."""
 
     @staticmethod
     def main(*args):

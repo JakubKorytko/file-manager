@@ -1,8 +1,11 @@
+"""This module contains the 'rename' command class."""
+
 from os import path as os_path, rename as os_rename
 from submodules import TextTools, Error
 from commands.command import Command
 
-class Main(Command):
+class Rename(Command):
+    """Class for the 'rename' command. Renames a file or directory."""
 
     @staticmethod
     def main(path):

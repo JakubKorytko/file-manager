@@ -1,14 +1,17 @@
+"""This module contains the 'dir' command class."""
+
 from os import listdir, path as os_path
 from tabulate import tabulate
 from commands.command import Command
 
-class Main(Command):
+class Dir(Command):
+    """Class for the 'dir' command. Displays the content of the current directory."""
 
     @staticmethod
     def main(*args):
         """Displays the content of the current directory."""
 
-        Main.no_args(args, "dir")
+        Dir.no_args(args, "dir")
 
         dirs = listdir()
         data = []
