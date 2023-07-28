@@ -12,6 +12,13 @@ class Commands:
     # Its a false positive, data property is dynamically set by the Config class
 
     @staticmethod
+    def no_args(args, command):
+        """Prints an info message if the command is called with arguments when it shouldn't be."""
+
+        if len(args[0]) > 0:
+            print(f"'{command}' command does not take any arguments, ignoring them...")
+
+    @staticmethod
     def find(command):
         """Returns the name of the command if it exists, False otherwise."""
 
@@ -38,8 +45,10 @@ class Commands:
         return getattr(Commands, cmd)
 
     @staticmethod
-    def help():
+    def help(*args):
         """Displays the help message."""
+
+        Commands.no_args(args, "help")
 
         if len(Commands.list) == 0:
             print("No commands found")
@@ -53,8 +62,10 @@ class Commands:
         return 1
 
     @staticmethod
-    def dir():
+    def dir(*args):
         """Displays the content of the current directory."""
+
+        Commands.no_args(args, "dir")
 
         dirs = listdir()
         data = []
