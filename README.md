@@ -99,7 +99,7 @@ The file consists of two sections:
 
 - genericErrorCodes: This section contains a list of error codes that are used by files-manager when a command fails. These errors are used by multiple commands, so they are stored in a separate section to avoid duplication.
 
-Here's an initial config.json file:
+Here's an example of config.json file:
 
 ```json
 {
@@ -174,7 +174,7 @@ Here's an initial config.json file:
 
 ### Adding new commands
 
-You can customize this file to better suit your needs. If you add a new command, you must also add a new static method to the **Commands** class in the **/submodules/utils/command.py** file. This method must have the same name as the command you added to the config.json file.
+You can customize this file to better suit your needs. If you add a new command, you must also add a new static method to the **Commands** class in the **commands.py** file (main directory). This method must have the same name as the command you added to the config.json file.
 
 # License
 
