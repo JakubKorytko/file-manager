@@ -1,4 +1,4 @@
 """The entry point of the program."""
-from module import FilesManager
+from filesmanager import FilesManager
 
 FilesManager.start()
