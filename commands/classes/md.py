@@ -1,8 +1,8 @@
 """This module contains the 'md' command class."""
 
 from os import makedirs, path as os_path
-from submodules import TextTools, Error
-from commands.command import Command
+from utils import TextTools, Error
+from commands import Command
 
 class Md(Command):
     """Class for the 'md' command. Creates a directory."""

@@ -2,7 +2,7 @@
 from os import path
 from json import load as json_file_load
 from time import sleep
-from submodules.utils.text import TextTools
+from utils import TextTools
 
 # config.json file should be in the same directory as this file
 # this variable is just an information for the user where the file should be

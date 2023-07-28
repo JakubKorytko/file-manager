@@ -1,6 +1,6 @@
-
-from commands.command import Command
-from commands.load import Config
+from sys import exit as sys_exit
+from commands import Command
+from commands.logic.load import Config
 
 class CommandsHandler:
 
@@ -45,8 +45,13 @@ class CommandsHandler:
         return command
 
 
-    def run(self, command, *args):
+    def run(self, command):
         """Runs a command if it exists."""
+
+        if command=="exit":
+            return lambda args: sys_exit(0)
+            # args are needed for proper function call even if they are not used
+
         self.__verify()
 
         command_name = self.__convertIfAlias(command)
@@ -55,8 +60,7 @@ class CommandsHandler:
 
         for subclass in subclasses:
             if command_name == subclass.__name__.lower():
-                subclass.main(*args)
-                return True
+                return subclass.main
 
         return False
 

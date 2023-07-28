@@ -1,8 +1,8 @@
 """This module contains the 'cd' command class."""
 
 from os import chdir, path as os_path
-from commands.command import Command
-from submodules import TextTools, Error
+from commands import Command
+from utils import TextTools, Error
 
 class Cd(Command):
     """Class for the 'cd' command. Changes the current directory."""

@@ -2,8 +2,8 @@
 
 from os import remove, path as os_path
 from shutil import rmtree
-from submodules import TextTools, Error
-from commands.command import Command
+from utils import TextTools, Error
+from commands import Command
 
 class Rm(Command):
     """Class for the 'rm' command. Removes a file or directory."""

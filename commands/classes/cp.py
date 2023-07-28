@@ -2,8 +2,8 @@
 
 from shutil import copytree, copy
 from os import path as os_path
-from submodules import TextTools, Error
-from commands.command import Command
+from utils import TextTools, Error
+from commands import Command
 
 class Cp(Command):
     """Class for the 'cp' command. Copies a file or directory."""
