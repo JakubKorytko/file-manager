@@ -87,4 +87,4 @@ Allows to set the commands dictionary manually. Useful for debugging."""
         self.is_loaded = True
 
 # Singleton instance
-Config = Config()
+config = Config()

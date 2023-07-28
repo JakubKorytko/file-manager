@@ -1,3 +1,5 @@
+""" This file is used to import all the classes in the commands.classes folder."""
+
 from commands.classes.dir import Dir
 from commands.classes.help import Help
 from commands.classes.cd import Cd

@@ -1,11 +1,17 @@
+"""Handles commands. Runs them if they exist."""
+
 from sys import exit as sys_exit
 from commands import Command
-from commands.logic.load import Config
+from commands.logic.load import config
 
 class CommandsHandler:
+    """Class that handles commands."""
 
-    def __verify(self):
-        commands = Config.data["commands"]
+    @staticmethod
+    def _verify():
+        """Verifies that the number of commands matches the number of command classes."""
+
+        commands = config.data["commands"]
         subclasses = Command.__subclasses__()
 
         if len(subclasses) != len(commands):
@@ -25,15 +31,11 @@ class CommandsHandler:
                 print("Exiting...")
                 exit(1)
 
-    @property
-    def commands_list(self):
-        """Returns the list of commands."""
-        self.__verify()
+    @staticmethod
+    def _convert_if_alias(command):
+        """Converts a command to its name if it is an alias."""
 
-        return Config.data["commands"]
-
-    def __convertIfAlias(self, command):
-        commands = Config.data["commands"]
+        commands = config.data["commands"]
 
         for cmd in commands:
             if cmd == command:
@@ -44,17 +46,17 @@ class CommandsHandler:
 
         return command
 
-
-    def run(self, command):
+    @staticmethod
+    def run(command):
         """Runs a command if it exists."""
 
         if command=="exit":
             return lambda args: sys_exit(0)
             # args are needed for proper function call even if they are not used
 
-        self.__verify()
+        CommandsHandler._verify()
 
-        command_name = self.__convertIfAlias(command)
+        command_name = CommandsHandler._convert_if_alias(command)
 
         subclasses = Command.__subclasses__()
 
@@ -63,5 +65,3 @@ class CommandsHandler:
                 return subclass.main
 
         return False
-
-CommandsHandler = CommandsHandler()

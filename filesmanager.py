@@ -2,7 +2,7 @@
 from colorama import init as colorama_init
 from utils import TextTools, Error
 from commands.logic import CommandsHandler
-from commands.logic.load import Config
+from commands.logic.load import config
 
 class FilesManager:
     """Main class of the program."""
@@ -42,7 +42,7 @@ class FilesManager:
     @staticmethod
     def loop():
         """Main loop of the program."""
-        Error.set_data(Config.data)
+        Error.set_data(config.data)
 
         while FilesManager.run(input(TextTools.indicator())):
             pass
