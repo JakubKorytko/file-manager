@@ -2,40 +2,59 @@
 
 from sys import exit as sys_exit
 from commands import Command
-from commands.logic.load import config
 
 class CommandsHandler:
     """Class that handles commands."""
+
+    data_loaded = False
+
+    @staticmethod
+    def set_data(data):
+        """Sets the data for the class."""
+
+        CommandsHandler.data = data
+        CommandsHandler.data_loaded = True
+
+    @staticmethod
+    def wrong_data_message():
+        """Prints the error message when the number of command classes
+is not equal to the number of commands and exits the program"""
+        print("Fix it by adding/removing a command class", end=" ")
+        print("or adding/removing a command", end="")
+        print("in the data provided to CommandsHandler.set_data()")
+        print("By default, data is fetched from the config file")
+        print("Exiting...")
+        sys_exit(1)
 
     @staticmethod
     def _verify():
         """Verifies that the number of commands matches the number of command classes."""
 
-        commands = config.data["commands"]
+        if not CommandsHandler.data_loaded:
+            print("Error: CommandsHandler data not loaded.")
+            print("Please run CommandsHandler.set_data() before using CommandsHandler._verify()")
+            print("Exiting...")
+            sys_exit(1)
+
+        commands = CommandsHandler.data["commands"]
         subclasses = Command.__subclasses__()
 
         if len(subclasses) != len(commands):
             print("Number of commands does not match the number of command classes")
-            print("Fix it by adding/removing a command class", end=" ")
-            print("or adding/removing a command in the config file")
-            print("Exiting...")
-            exit(1)
+            CommandsHandler.wrong_data_message()
 
         subclasses_names = [subclass.__name__.lower() for subclass in subclasses]
 
         for command in commands:
             if command not in subclasses_names:
                 print(f"Command '{command}' not found in commands directory")
-                print("Fix it by adding/removing a command class", end=" ")
-                print("or adding/removing a command in the config file")
-                print("Exiting...")
-                exit(1)
+                CommandsHandler.wrong_data_message()
 
     @staticmethod
     def _convert_if_alias(command):
         """Converts a command to its name if it is an alias."""
 
-        commands = config.data["commands"]
+        commands = CommandsHandler.data["commands"]
 
         for cmd in commands:
             if cmd == command:

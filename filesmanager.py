@@ -1,8 +1,7 @@
 """Main module of the program, contains the main loop and the main function."""
 from colorama import init as colorama_init
 from utils import TextTools, Error
-from commands.logic import CommandsHandler
-from commands.logic.load import config
+from logic import CommandsHandler, config
 
 class FilesManager:
     """Main class of the program."""
@@ -43,6 +42,7 @@ class FilesManager:
     def loop():
         """Main loop of the program."""
         Error.set_data(config.data)
+        CommandsHandler.set_data(config.data)
 
         while FilesManager.run(input(TextTools.indicator())):
             pass

@@ -6,6 +6,7 @@ from commands import Command
 
 # from utils import TextTools, Error
 # | These are the utils modules you will most likely need
+# | You can read more about them in the utils folder (look at the docstrings)
 
 # | If you need the list of commands, you can import it like this:
 # from commands.logic.load import config
