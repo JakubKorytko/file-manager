@@ -1,2 +1,10 @@
+# dependencies
 colorama==0.4.6
 tabulate==0.9.0
+
+# dev dependencies
+pytest==7.4.0
+
+# pylint version used in the project
+# not needed for the project to run
+#pylint==2.17.5
