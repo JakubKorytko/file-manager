@@ -58,16 +58,35 @@ class TestTextTools:
     def test_path():
         """Tests the TextTools.path() method"""
 
-        # test_path = "C:\\/Users\\/User\\/Documents\\/test.txt*?:<>"
-        # result_path = "C:/Users/User/Documents/test.txt"
+        test_path = "C:\\Users\\User\\Documents\\test.txt*?<>"
+        result_path = "C:/Users/User/Documents/test.txt"
+        # Windows uses backslashes, but they are not allowed in paths
+        # They are replaced by slashes
+        # Also, the forbidden characters are removed
 
-        # res = TextTools.path(test_path)
+        res = TextTools.path(test_path)
 
-        # assert res == result_path
+        assert res == result_path
 
     @staticmethod
     def test_paths():
         """Tests the TextTools.paths() method"""
+
+        test_paths = [
+            "C:\\Users\\User\\Documents\\test.txt*?<>",
+            "*?C:\\Users\\User\\Desktop\\test.txt<>"
+        ]
+        result_paths = [
+            "C:/Users/User/Documents/test.txt",
+            "C:/Users/User/Desktop/test.txt"
+        ]
+        # Windows uses backslashes, but they are not allowed in paths
+        # They are replaced by slashes
+        # Also, the forbidden characters are removed
+
+        res = TextTools.paths(*test_paths)
+
+        assert res == result_paths
 
 
     @staticmethod
