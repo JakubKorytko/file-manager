@@ -178,20 +178,17 @@ Here's an example of config.json file:
 1. You need to add the command to the **/logic/config.json** file. The command must have a unique name and a description of what it does. You can also add aliases for the command if you want to make it easier to use for users who are familiar with other command-line interfaces. It should look like this:
 
 ```json
-// ...
 "newCommand": {
     "aliases": [
         "alias1",
         "alias2"
-        // ...
-    ],
+],
     "description": "description of what the command does",
     "errorCodes": {
         "errorCode": "error message",
-        // ...
+        "errorCode2": "error message 2"
     }
 }
-// ...
 ```
 
 errorCodes can contain variables in the {} brackets. You can see how to use the command in the "logic/error.py" file. **The same applies to the genericErrorCodes section.**
