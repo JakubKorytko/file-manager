@@ -31,7 +31,11 @@ class TextTools:
     def path(path):
         """Returns a path without forbidden characters."""
 
-        forbidden_chars = "\"\\*<>:?|"
+        forbidden_chars = "\"*<>?|"
+
+        path = path.replace("\\", "/")
+        # Windows uses backslashes, but they are not allowed in paths
+
         for char in forbidden_chars:
             path = path.replace(char, "")
         return path
