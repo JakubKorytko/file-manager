@@ -1,4 +1,4 @@
-""" This file is used to import all the classes in the commands.classes folder."""
+""" This file is used to import all the classes in the commands folder."""
 
 from ._base import Command
 from .dir import Dir

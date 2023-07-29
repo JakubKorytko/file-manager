@@ -2,8 +2,7 @@
 
 from utils import TextTools
 from commands import Command
-from logic.load import config #pylint: disable=C0412
-# We can't group it due to circular imports
+from logic.load import config
 
 class Help(Command):
     """Class for the 'help' command. Displays the help message."""

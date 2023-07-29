@@ -9,12 +9,13 @@ from commands import Command
 # | You can read more about them in the utils folder (look at the docstrings)
 
 # | If you need the list of commands, you can import it like this:
-# from commands.logic.load import config
+# from logic.load import config
+# | Access it like this:
+# config.data["commands"]
+# DON'T MODIFY THE LIST, IT WILL BREAK THE PROGRAM
+# The only purpose of this list is to for example display all commands in the help message
 
-# | If you are using Pylint, you should disable the C0412 warning:
-# from commands.logic.load import config #pylint: disable=C0412
-
-# | We can't group it with the other imports due to circular imports
+# | You can read more about it in the logic folder (look at the docstrings)
 
 class Example(Command):
     """Class for the 'help' command. Displays the help message."""
