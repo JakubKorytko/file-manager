@@ -1,7 +1,7 @@
 """This module contains the 'help' command class."""
 
 from utils import TextTools
-from commands import Command 
+from commands import Command
 from commands.logic.load import config #pylint: disable=C0412
 # We can't group it due to circular imports
 
