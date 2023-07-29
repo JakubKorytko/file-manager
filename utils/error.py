@@ -9,12 +9,28 @@ class Error:
     # Its a false positive, data property is dynamically set by the Config class
 
     @staticmethod
+    def not_loaded_message(function_name):
+        """Returns an error message when the data is not loaded."""
+
+        error_message = ("Error: Error data not loaded.",
+        f"Please run Error.set_data() before using Error.{function_name}()")
+        return error_message
+
+    @staticmethod
     def set_data(data):
         """Sets commands and generic_codes properties."""
 
         Error.commands = data["commands"]
         Error.generic_codes = data["genericErrorCodes"]
         Error.data_loaded = True
+
+    @staticmethod
+    def unset_data():
+        """Unsets commands and generic_codes properties."""
+
+        Error.commands = None
+        Error.generic_codes = None
+        Error.data_loaded = False
 
     @staticmethod
     def generic(code, args=None):
@@ -28,8 +44,7 @@ class Error:
             args = {}
 
         if not Error.data_loaded:
-            return ("Error: Error data not loaded.",
-            "Please run Error.set_data() before using Error.generic()")
+            return Error.not_loaded_message("generic")
 
         return Error.generic_codes[code].format(**args)
 
@@ -46,8 +61,7 @@ class Error:
             args = {}
 
         if not Error.data_loaded:
-            return ("Error: Error data not loaded.",
-            "Please run Error.set_data() before using Error.command()")
+            return Error.not_loaded_message("command")
 
         return Error.commands[command]["errorCodes"][code].format(**args)
 
