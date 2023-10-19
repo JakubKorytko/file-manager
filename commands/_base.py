@@ -1,5 +1,11 @@
 """This is the base module for all the commands."""
 
+# This class is used to extract inherited classes.
+# It makes it easier to determine the number of commands and extract the appropriate methods.
+# That's why there aren't many methods in this class.
+
+# pylint: disable=too-few-public-methods
+
 class Command:
     """Base class for all the commands."""
 
