@@ -1,7 +1,8 @@
 """This module is used to read the config.json file and store it in a singleton class."""
 from os import path
-from json import load as json_file_load
 from time import sleep
+from json import load as json_file_load
+from sys import exit as sys_exit
 from utils import TextTools
 
 # config.json file should be in the same directory as this file
@@ -52,7 +53,7 @@ class Config:
         if attempts >= max_attempts:
             output = TextTools.color(f"Retried {max_attempts} times. Aborting...", "red")
             print(output)
-            exit(1)
+            sys_exit(1)
 
 
         time_left = delay
