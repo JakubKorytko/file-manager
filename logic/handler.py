@@ -20,7 +20,7 @@ class CommandsHandler:
         """Prints the error message when the number of command classes
 is not equal to the number of commands and exits the program"""
         print("Fix it by adding/removing a command class", end=" ")
-        print("or adding/removing a command", end="")
+        print("or adding/removing a command", end=" ")
         print("in the data provided to CommandsHandler.set_data()")
         print("By default, data is fetched from the config file")
         print("Exiting...")
