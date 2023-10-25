@@ -1,6 +1,8 @@
 """Unit tests for the TextTools module."""
 
-from utils.text import TextTools, Fore, Style, getcwd
+from os import getcwd
+from colorama import Fore, Style
+from utils import TextTools
 
 class TestTextTools:
     """Class containing all the tests for the TextTools module"""

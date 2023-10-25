@@ -1,6 +1,7 @@
 """Tests for the Error module"""
+
 from colorama import Fore, Style
-from utils.error import Error
+from utils import Error
 
 class TestError:
     """Class containing all the tests for the Error module"""
