@@ -1,5 +1,5 @@
 """This module contains the Error class, which is used to display error messages."""
-from . import TextTools
+from utils import TextTools
 
 class Error:
     """This class is used to display error messages."""

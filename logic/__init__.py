@@ -1,4 +1,4 @@
 """Logic (handler, data load from a file) for the commands module."""
 
-from .handler import CommandsHandler
-from .load import config
+from logic.handler import CommandsHandler
+from logic.load import config

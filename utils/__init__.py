@@ -1,4 +1,4 @@
 """Utility functions for the project. Error handling, text processing, etc."""
 
-from .text import TextTools
-from .error import Error
+from utils.text import TextTools
+from utils.error import Error
