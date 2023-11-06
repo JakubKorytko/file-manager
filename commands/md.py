@@ -2,7 +2,7 @@
 
 from os import makedirs, path as os_path
 from utils import TextTools, Error
-from commands import Command
+from commands._base import Command
 
 class Md(Command):
     """Class for the 'md' command. Creates a directory."""

@@ -3,7 +3,7 @@
 from shutil import copytree, copy
 from os import path as os_path
 from utils import TextTools, Error
-from commands import Command
+from commands._base import Command
 
 class Cp(Command):
     """Class for the 'cp' command. Copies a file or directory."""

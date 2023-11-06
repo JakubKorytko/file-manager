@@ -2,7 +2,7 @@
 
 from os import path as os_path, rename as os_rename
 from utils import TextTools, Error
-from commands import Command
+from commands._base import Command
 
 class Rename(Command):
     """Class for the 'rename' command. Renames a file or directory."""

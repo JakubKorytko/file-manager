@@ -2,7 +2,7 @@
 
 from os import listdir, path as os_path
 from tabulate import tabulate
-from commands import Command
+from commands._base import Command
 
 class Dir(Command):
     """Class for the 'dir' command. Displays the content of the current directory."""

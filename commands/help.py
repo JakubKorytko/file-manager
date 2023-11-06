@@ -1,7 +1,7 @@
 """This module contains the 'help' command class."""
 
 from utils import TextTools
-from commands import Command
+from commands._base import Command
 from logic.load import config
 
 class Help(Command):
