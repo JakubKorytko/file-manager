@@ -1,23 +1,20 @@
 """Unit tests for the TextTools module."""
 
-from os import getcwd
+from json import load as json_load
+from os import getcwd, path
 from colorama import Fore, Style
 from utils import TextTools
 
 class TestTextTools:
     """Class containing all the tests for the TextTools module"""
 
+    test_data_path = path.join(path.dirname(__file__), "test_data.json")
+
+    with open(test_data_path, "r", encoding="utf-8") as file:
+        test_data = json_load(file)
+
     test_command_name = "cd"
-    test_command = {
-        "aliases": [
-            "chdir"
-        ],
-        "description": "changes to the selected directory",
-        "errorCodes": {
-            "notDirectory": "The path is not a directory",
-            "notFound": "The path does not exist"
-        }
-    }
+    test_command = test_data["commands"][test_command_name]
 
     @staticmethod
     def test_indictor():

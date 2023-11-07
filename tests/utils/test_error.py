@@ -1,47 +1,27 @@
 """Tests for the Error module"""
 
+from json import load as json_load
+from os import path
 from colorama import Fore, Style
 from utils import Error
+
 
 class TestError:
     """Class containing all the tests for the Error module"""
 
-    data = {
-        "commands": {
-            "cd": {
-                "aliases": [
-                    "chdir"
-                ],
-                "description": "changes to the selected directory",
-                "errorCodes": {
-                    "notDirectory": "The path is not a directory",
-                    "notFound": "The path does not exist"
-                }
-            },
-            "md": {
-                "aliases": [
-                    "mkdir"
-                ],
-                "description": "creates a directory with the given name",
-                "errorCodes": {
-                    "alreadyExists": "The directory already exists"
-                }
-            }
-            },
-        "genericErrorCodes": {
-            "unknownCommand": "Unknown command: {command}, type 'help' to see available commands",
-            "invalidSyntax": "Invalid command syntax"
-        }
-    }
+    test_data_path = path.join(path.dirname(__file__), "test_data.json")
+
+    with open(test_data_path, "r", encoding="utf-8") as file:
+        test_data = json_load(file)
 
     @staticmethod
     def test_set_data():
         """Tests the Error.set_data() method"""
 
-        Error.set_data(TestError.data)
+        Error.set_data(TestError.test_data)
 
-        assert Error.commands == TestError.data["commands"]
-        assert Error.generic_codes == TestError.data["genericErrorCodes"]
+        assert Error.commands == TestError.test_data["commands"]
+        assert Error.generic_codes == TestError.test_data["genericErrorCodes"]
         assert Error.data_loaded
 
         Error.unset_data()
@@ -78,7 +58,7 @@ class TestError:
     def test_call_with_set_data():
         """Tests calling methods that require Error.set_data() after calling it"""
 
-        Error.set_data(TestError.data)
+        Error.set_data(TestError.test_data)
 
         expected_message_command = "The path is not a directory"
         expected_message_generic = "Unknown command: test, type 'help' to see available commands"

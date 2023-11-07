@@ -1,0 +1,27 @@
+{
+    "commands": {
+        "cd": {
+            "aliases": [
+                "chdir"
+            ],
+            "description": "changes to the selected directory",
+            "errorCodes": {
+                "notDirectory": "The path is not a directory",
+                "notFound": "The path does not exist"
+            }
+        },
+        "md": {
+            "aliases": [
+                "mkdir"
+            ],
+            "description": "creates a directory with the given name",
+            "errorCodes": {
+                "alreadyExists": "The directory already exists"
+            }
+        }
+        },
+    "genericErrorCodes": {
+        "unknownCommand": "Unknown command: {command}, type 'help' to see available commands",
+        "invalidSyntax": "Invalid command syntax"
+    }
+}
