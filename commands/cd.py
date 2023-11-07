@@ -12,13 +12,17 @@ class Cd(Command):
         """Changes the current directory."""
 
         error = False
-        pth = TextTools.path(path[0]) if len(path) > 0 else ""
 
         if len(path) != 1:
             error = Error.generic("invalidArguments", {"expected": "1", "actual": len(path)})
-        elif not os_path.exists(pth):
+
+        if not error:
+            pth = TextTools.path(path[0])
+
+        if not error and not os_path.exists(pth):
             error = Error.command("cd", "notFound")
-        elif not os_path.isdir(pth):
+
+        if not error and not os_path.isdir(pth):
             error = Error.command("cd", "notDirectory")
 
         if error:
