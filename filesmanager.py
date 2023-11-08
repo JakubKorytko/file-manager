@@ -3,6 +3,7 @@ from colorama import init as colorama_init
 from utils import TextTools, Error
 from logic import CommandsHandler, config
 
+
 class FilesManager:
     """Main class of the program."""
 
@@ -16,7 +17,9 @@ class FilesManager:
     def init():
         """Initializes the program."""
         colorama_init()
-        TextTools.print('\nFile manager (use "exit" to exit, "help" to list commands)\n', "magenta")
+        TextTools.print(
+            '\nFile manager (use "exit" to exit, "help" to list commands)\n', "magenta"
+        )
 
     @staticmethod
     def run(cmnd):

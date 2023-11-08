@@ -1,6 +1,7 @@
 """This is example code for your own commands class. It is not used by the program."""
 
 from commands._base import Command
+
 # | Class needs to inherit from the Command class
 # | If it doesn't, it won't be loaded by the program
 
@@ -17,6 +18,7 @@ from commands._base import Command
 
 # | You can read more about it in the logic folder (look at the docstrings)
 
+
 class Example(Command):
     """Class for the 'help' command. Displays the help message."""
 
@@ -25,7 +27,9 @@ class Example(Command):
     # It also needs to have the main name, so it can be called by the CommandsHandler class
     # You can specify other methods, but they won't be called by the program
     @staticmethod
-    def main(*args): # You can specify any number of arguments here, *args is just an example
+    def main(
+        *args,
+    ):  # You can specify any number of arguments here, *args is just an example
         """This is the main method of the command. It is called when the command is executed."""
 
         Command.no_args(args, "example")

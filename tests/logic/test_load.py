@@ -5,12 +5,13 @@ from pytest import raises
 
 from logic.load import Config
 
+
 class TestConfig:
     """Test the Config class."""
 
     @staticmethod
     def test_load_data():
-        """ Test the load_data() method. """
+        """Test the load_data() method."""
 
         config = Config()
         with patch("builtins.open", mock_open(read_data='{"key": "value"}')):
@@ -20,7 +21,7 @@ class TestConfig:
 
     @staticmethod
     def test_force_reload():
-        """ Test the force_reload() method. """
+        """Test the force_reload() method."""
 
         config = Config()
         with patch("builtins.open", mock_open(read_data='{"key": "value"}')):
@@ -35,7 +36,7 @@ class TestConfig:
 
     @staticmethod
     def test_retry_load(monkeypatch):
-        """ Test the retry_load() method. """
+        """Test the retry_load() method."""
 
         monkeypatch.setattr(Config, "_Config__retry_delay", 0)
         monkeypatch.setattr(Config, "_Config__retry_max_attempts", 1)
@@ -54,7 +55,7 @@ class TestConfig:
 
     @staticmethod
     def test_data_setter():
-        """ Test the data setter. """
+        """Test the data setter."""
 
         config = Config()
         config.data = {"key": "value"}

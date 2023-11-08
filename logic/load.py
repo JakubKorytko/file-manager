@@ -10,6 +10,7 @@ from utils import TextTools
 # change it if you want to move the script along with the config.json file
 CONFIG_PATH = "submodules/utils/config.json"
 
+
 class Config:
     """Singleton class to load and store the config.json file"""
 
@@ -51,10 +52,11 @@ class Config:
         print(f"Failed to load {CONFIG_PATH} file.")
 
         if attempts >= max_attempts:
-            output = TextTools.color(f"Retried {max_attempts} times. Aborting...", "red")
+            output = TextTools.color(
+                f"Retried {max_attempts} times. Aborting...", "red"
+            )
             print(output)
             sys_exit(1)
-
 
         time_left = delay
 
@@ -82,10 +84,11 @@ class Config:
     @data.setter
     def data(self, value):
         """Setter for the commands dictionary.
-Allows to set the commands dictionary manually. Useful for debugging."""
+        Allows to set the commands dictionary manually. Useful for debugging."""
 
         self._data = value
         self.is_loaded = True
+
 
 # Singleton instance
 config = Config()

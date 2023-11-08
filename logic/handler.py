@@ -3,6 +3,7 @@
 from sys import exit as sys_exit
 from commands import Command
 
+
 class CommandsHandler:
     """Class that handles commands."""
 
@@ -18,7 +19,7 @@ class CommandsHandler:
     @staticmethod
     def wrong_data_message():
         """Prints the error message when the number of command classes
-is not equal to the number of commands and exits the program"""
+        is not equal to the number of commands and exits the program"""
         print("Fix it by adding/removing a command class", end=" ")
         print("or adding/removing a command", end=" ")
         print("in the data provided to CommandsHandler.set_data()")
@@ -32,7 +33,9 @@ is not equal to the number of commands and exits the program"""
 
         if not CommandsHandler.data_loaded:
             print("Error: CommandsHandler data not loaded.")
-            print("Please run CommandsHandler.set_data() before using CommandsHandler._verify()")
+            print(
+                "Please run CommandsHandler.set_data() before using CommandsHandler._verify()"
+            )
             print("Exiting...")
             sys_exit(1)
 
@@ -69,7 +72,7 @@ is not equal to the number of commands and exits the program"""
     def run(command):
         """Runs a command if it exists."""
 
-        if command=="exit":
+        if command == "exit":
             return lambda args: sys_exit(0)
             # args are needed for proper function call even if they are not used
 

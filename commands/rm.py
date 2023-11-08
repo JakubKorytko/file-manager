@@ -5,6 +5,7 @@ from shutil import rmtree
 from utils import TextTools, Error
 from commands._base import Command
 
+
 class Rm(Command):
     """Class for the 'rm' command. Removes a file or directory."""
 
@@ -16,7 +17,9 @@ class Rm(Command):
         pth = TextTools.path(path[0]) if len(path) > 0 else ""
 
         if len(path) != 1:
-            error = Error.generic("invalidArguments", {"expected": "1", "actual": len(path)})
+            error = Error.generic(
+                "invalidArguments", {"expected": "1", "actual": len(path)}
+            )
         elif not os_path.exists(pth):
             error = Error.command("rm", "notFound")
 

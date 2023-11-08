@@ -15,12 +15,13 @@ from pytest import raises
 from logic import CommandsHandler
 from commands import Command
 
+
 class TestCommandsHandler:
-    """ Tests for CommandsHandler class. """
+    """Tests for CommandsHandler class."""
 
     @staticmethod
     def test_set_data():
-        """ Test for CommandsHandler.set_data() method. """
+        """Test for CommandsHandler.set_data() method."""
 
         data = {"commands": ["test"]}
         CommandsHandler.set_data(data)
@@ -28,7 +29,7 @@ class TestCommandsHandler:
 
     @staticmethod
     def test_wrong_data_message(capsys):
-        """ Test for CommandsHandler.wrong_data_message() method. """
+        """Test for CommandsHandler.wrong_data_message() method."""
 
         with raises(SystemExit):
             CommandsHandler.wrong_data_message()
@@ -37,7 +38,7 @@ class TestCommandsHandler:
 
     @staticmethod
     def test_verify(monkeypatch, capsys):
-        """ Test for CommandsHandler._verify() method. """
+        """Test for CommandsHandler._verify() method."""
 
         data = {"commands": ["___testcommandclass"]}
         CommandsHandler.set_data(data)
@@ -60,11 +61,14 @@ class TestCommandsHandler:
 
         captured = capsys.readouterr()
 
-        assert "Number of commands does not match the number of command classes" not in captured.out
+        assert (
+            "Number of commands does not match the number of command classes"
+            not in captured.out
+        )
 
     @staticmethod
     def test_convert_if_alias():
-        """ Test for CommandsHandler._convert_if_alias() method. """
+        """Test for CommandsHandler._convert_if_alias() method."""
 
         data = {"commands": {"test": {"aliases": ["alias"]}}}
         CommandsHandler.set_data(data)
@@ -75,7 +79,7 @@ class TestCommandsHandler:
 
     @staticmethod
     def test_run(monkeypatch):
-        """ Test for CommandsHandler.run() method. """
+        """Test for CommandsHandler.run() method."""
 
         data = {"commands": ["___testcommandclass"]}
         CommandsHandler.set_data(data)
@@ -109,7 +113,7 @@ class TestCommandsHandler:
 
     @staticmethod
     def test_run_exit():
-        """ Test for CommandsHandler.run() method. """
+        """Test for CommandsHandler.run() method."""
 
         with raises(SystemExit):
             CommandsHandler.run("exit")([])

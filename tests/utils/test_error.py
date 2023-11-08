@@ -61,7 +61,9 @@ class TestError:
         Error.set_data(TestError.test_data)
 
         expected_message_command = "The path is not a directory"
-        expected_message_generic = "Unknown command: test, type 'help' to see available commands"
+        expected_message_generic = (
+            "Unknown command: test, type 'help' to see available commands"
+        )
 
         got_message_command = Error.command("cd", "notDirectory")
         got_message_generic = Error.generic("unknownCommand", {"command": "test"})

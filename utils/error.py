@@ -1,6 +1,7 @@
 """This module contains the Error class, which is used to display error messages."""
 from utils.text import TextTools
 
+
 class Error:
     """This class is used to display error messages."""
 
@@ -12,8 +13,10 @@ class Error:
     def not_loaded_message(function_name):
         """Returns an error message when the data is not loaded."""
 
-        error_message = ("Error: Error data not loaded.",
-        f"Please run Error.set_data() before using Error.{function_name}()")
+        error_message = (
+            "Error: Error data not loaded.",
+            f"Please run Error.set_data() before using Error.{function_name}()",
+        )
         return error_message
 
     @staticmethod

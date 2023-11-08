@@ -5,6 +5,7 @@ from os import path as os_path
 from utils import TextTools, Error
 from commands._base import Command
 
+
 class Cp(Command):
     """Class for the 'cp' command. Copies a file or directory."""
 
@@ -16,7 +17,9 @@ class Cp(Command):
         paths = TextTools.paths(*path)
 
         if len(path) != 2:
-            error = Error.generic("invalidArguments", {"expected": "2", "actual": len(path)})
+            error = Error.generic(
+                "invalidArguments", {"expected": "2", "actual": len(path)}
+            )
 
         if not error:
             [source, destination] = paths

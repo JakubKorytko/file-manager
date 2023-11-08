@@ -6,6 +6,7 @@
 
 # pylint: disable=too-few-public-methods
 
+
 class Command:
     """Base class for all the commands."""
 

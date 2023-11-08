@@ -4,6 +4,7 @@ from os import path as os_path, rename as os_rename
 from utils import TextTools, Error
 from commands._base import Command
 
+
 class Rename(Command):
     """Class for the 'rename' command. Renames a file or directory."""
 
@@ -15,7 +16,9 @@ class Rename(Command):
         pth = TextTools.paths(*path)
 
         if len(path) != 2:
-            error = Error.generic("invalidArguments", {"expected": "2", "actual": len(path)})
+            error = Error.generic(
+                "invalidArguments", {"expected": "2", "actual": len(path)}
+            )
         elif not os_path.exists(pth[0]):
             error = Error.command("rename", "notFound")
         elif os_path.exists(pth[1]):

@@ -4,6 +4,7 @@ from os import chdir, path as os_path
 from commands._base import Command
 from utils import TextTools, Error
 
+
 class Cd(Command):
     """Class for the 'cd' command. Changes the current directory."""
 
@@ -14,7 +15,9 @@ class Cd(Command):
         error = False
 
         if len(path) != 1:
-            error = Error.generic("invalidArguments", {"expected": "1", "actual": len(path)})
+            error = Error.generic(
+                "invalidArguments", {"expected": "1", "actual": len(path)}
+            )
 
         if not error:
             pth = TextTools.path(path[0])

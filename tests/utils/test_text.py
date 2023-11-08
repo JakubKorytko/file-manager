@@ -5,6 +5,7 @@ from os import getcwd, path
 from colorama import Fore, Style
 from utils import TextTools
 
+
 class TestTextTools:
     """Class containing all the tests for the TextTools module"""
 
@@ -73,11 +74,11 @@ class TestTextTools:
 
         test_paths = [
             "C:\\Users\\User\\Documents\\test.txt*?<>",
-            "*?C:\\Users\\User\\Desktop\\test.txt<>"
+            "*?C:\\Users\\User\\Desktop\\test.txt<>",
         ]
         result_paths = [
             "C:/Users/User/Documents/test.txt",
-            "C:/Users/User/Desktop/test.txt"
+            "C:/Users/User/Desktop/test.txt",
         ]
         # Windows uses backslashes, but they are not allowed in paths
         # They are replaced by slashes
@@ -87,12 +88,11 @@ class TestTextTools:
 
         assert res == result_paths
 
-
     @staticmethod
     def test_scrap_args():
         """Tests the TextTools.scrap_args() method"""
 
-        test_command = 'cp   \'/home/user/Documents\'    "/home/user/Desktop"   '
+        test_command = "cp   '/home/user/Documents'    \"/home/user/Desktop\"   "
         # Spaces are here to test the strip() method
         # Quotes are here to test the regex
 

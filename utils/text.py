@@ -3,6 +3,7 @@ from os import getcwd
 from re import findall as re_findall
 from colorama import Fore, Style
 
+
 class TextTools:
     """Class containing various tools to manipulate text."""
 
@@ -10,7 +11,7 @@ class TextTools:
     def indicator():
         """Returns the colored indicator before the user input."""
 
-        return TextTools.color(getcwd()+">", "green")
+        return TextTools.color(getcwd() + ">", "green")
 
     @staticmethod
     def print_command(name, value):
@@ -19,7 +20,7 @@ class TextTools:
         aliases = value["aliases"]
         cmnd = name
 
-        if len(aliases)>0:
+        if len(aliases) > 0:
             cmnd += " (" + ", ".join(aliases) + ")"
 
         formatted_name = TextTools.color(f"{cmnd}", "yellow")
@@ -31,7 +32,7 @@ class TextTools:
     def path(path):
         """Returns a path without forbidden characters."""
 
-        forbidden_chars = "\"*<>?|"
+        forbidden_chars = '"*<>?|'
 
         path = path.replace("\\", "/")
         # Windows uses backslashes, but they are not allowed in paths
@@ -51,7 +52,7 @@ class TextTools:
         """Returns a list of arguments from a command."""
 
         quote = r'"'
-        r_str = r"(?<="+ quote +r"|').*?(?="+ quote +r"|')|[^\s'"+ quote +r"]+"
+        r_str = r"(?<=" + quote + r"|').*?(?=" + quote + r"|')|[^\s'" + quote + r"]+"
         # I know this is ugly, but it works lol (regex is a pain)
 
         args = re_findall(r_str, cmnd)

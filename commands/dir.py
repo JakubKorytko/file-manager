@@ -4,6 +4,7 @@ from os import listdir, path as os_path
 from tabulate import tabulate
 from commands._base import Command
 
+
 class Dir(Command):
     """Class for the 'dir' command. Displays the content of the current directory."""
 
@@ -19,8 +20,8 @@ class Dir(Command):
         for directory in dirs:
             info = {
                 "name": directory,
-                "size": str(os_path.getsize("./"+directory))+" BYTES",
-                "type": ("<DIR>" if os_path.isdir("./"+directory) else "<FILE>")
+                "size": str(os_path.getsize("./" + directory)) + " BYTES",
+                "type": ("<DIR>" if os_path.isdir("./" + directory) else "<FILE>"),
             }
             data.append(info.values())
 
