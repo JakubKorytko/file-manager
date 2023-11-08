@@ -1,17 +1,17 @@
 # Files manager
 
 - [Files manager](#files-manager)
-- [Introduction](#introduction)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [How to Run](#how-to-run)
-- [Features](#features)
-- [Configuration](#configuration)
+  - [Introduction](#introduction)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [How to Run](#how-to-run)
+  - [Features](#features)
+  - [Configuration](#configuration)
     - [Adding new commands and error codes](#adding-new-commands-and-error-codes)
-- [License](#license)
+  - [License](#license)
 
 
-# Introduction
+## Introduction
 
 files-manager is a console application written in Python that provides basic files managing functions. It allows users to view files and folders, change directories, create new directories, delete files and directories, rename files and directories, and copy files and directories.
 
@@ -19,7 +19,7 @@ This project was created to provide a simple, yet powerful tool for managing fil
 
 With its intuitive and easy-to-use interface, files-manager is a great tool for managing files and directories quickly and efficiently.
 
-# Prerequisites
+## Prerequisites
 
 Before you can use files-manager, you must have the following installed on your machine:
 
@@ -32,7 +32,7 @@ python --version
 
 If you don't have Python installed, you can download it from the official website: https://www.python.org/downloads/
 
-# Installation
+## Installation
 
 **When installing (e.g. in the `pip install` step), you may need to run the console as administrator / root, depending on where you run it.**
 
@@ -57,7 +57,7 @@ pip install -r requirements.txt
 
 That's it! Now you're ready to run files-manager on your machine.
 
-# How to Run
+## How to Run
 To run files-manager, follow these steps:
 
 Open a terminal or command prompt.
@@ -74,7 +74,7 @@ python main.py
 ```
 That's it! Now you can use files-manager to manage files and directories from the console.
 
-# Features
+## Features
 files-manager provides the following features:
 
 - **dir (ls)**: displays files and folders in the current directory.
@@ -87,7 +87,7 @@ files-manager provides the following features:
 
 You can also use aliases in the brackets for some of these commands. For example, **ls** is an alias for the **dir** command, and **chdir** is an alias for the **cd** command. These aliases are provided for convenience and to make the tool easier to use for users who are familiar with other command-line interfaces.
 
-# Configuration
+## Configuration
 
 files-manager comes with a configuration file called **config.json**. This file is located in the **/logic/config.json** path.
 
@@ -196,7 +196,7 @@ errorCodes can contain variables in the {} brackets. You can see how to use the 
 1. You need to add a class to the **/commands** directory. Name of the class must be the same as the name of the command in the config.json file. The class must derive from the **Command** class and implement the **main** method. The **main** method is called when the command is executed. It takes a list of arguments as a parameter and returns an integer. Look at the **/commands/.example.py** file for an example of how to create a new command class.
 2. You need to add an import statement for the new command class to the **/commands/__init__.py** file. This allows files-manager to find the class when it needs to execute the command. There is a comment in the file that tells you how to add the import statement.
 
-# License
+## License
 
 files-manager is licensed under the MIT License, which means you are free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software. But you must include the original license in all copies or substantial portions of the software.
 
