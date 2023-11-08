@@ -2,3 +2,5 @@
 
 from logic.handler import CommandsHandler
 from logic.load import config
+
+__all__ = ["CommandsHandler", "config"]
