@@ -1,6 +1,7 @@
 """This module contains various tools to manipulate text."""
 from os import getcwd
 from re import findall as re_findall
+
 from colorama import Fore, Style
 
 

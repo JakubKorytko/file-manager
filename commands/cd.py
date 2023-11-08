@@ -1,8 +1,10 @@
 """This module contains the 'cd' command class."""
 
-from os import chdir, path as os_path
+from os import chdir
+from os import path as os_path
+
 from commands._base import Command
-from utils import TextTools, Error
+from utils import Error, TextTools
 
 
 class Cd(Command):

@@ -12,8 +12,9 @@
 # pylint: disable=invalid-name
 
 from pytest import raises
-from logic import CommandsHandler
+
 from commands import Command
+from logic import CommandsHandler
 
 
 class TestCommandsHandler:

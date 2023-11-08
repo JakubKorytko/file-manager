@@ -1,9 +1,11 @@
 """This module contains the 'rm' command class."""
 
-from os import remove, path as os_path
+from os import path as os_path
+from os import remove
 from shutil import rmtree
-from utils import TextTools, Error
+
 from commands._base import Command
+from utils import Error, TextTools
 
 
 class Rm(Command):

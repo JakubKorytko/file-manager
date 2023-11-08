@@ -1,6 +1,7 @@
 """Handles commands. Runs them if they exist."""
 
 from sys import exit as sys_exit
+
 from commands import Command
 
 

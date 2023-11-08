@@ -1,8 +1,10 @@
 """This module contains the 'rename' command class."""
 
-from os import path as os_path, rename as os_rename
-from utils import TextTools, Error
+from os import path as os_path
+from os import rename as os_rename
+
 from commands._base import Command
+from utils import Error, TextTools
 
 
 class Rename(Command):

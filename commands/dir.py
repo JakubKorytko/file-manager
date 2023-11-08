@@ -1,7 +1,10 @@
 """This module contains the 'dir' command class."""
 
-from os import listdir, path as os_path
+from os import listdir
+from os import path as os_path
+
 from tabulate import tabulate
+
 from commands._base import Command
 
 

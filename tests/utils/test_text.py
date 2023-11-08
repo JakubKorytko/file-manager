@@ -2,7 +2,9 @@
 
 from json import load as json_load
 from os import getcwd, path
+
 from colorama import Fore, Style
+
 from utils import TextTools
 
 
@@ -102,41 +104,41 @@ class TestTextTools:
 
         assert res == test_args
 
+    test_colors = ["red", "green", "yellow"]
+    test_texts = ["Test1", "Test2", "Test3"]
+
+    @staticmethod
+    def test_colors_match_texts():
+        """Tests if the number of colors and texts match
+        (used for the next two tests)"""
+
+        if len(TestTextTools.test_colors) != len(TestTextTools.test_texts):
+            raise ValueError("The number of colors and texts must be the same")
+
     @staticmethod
     def test_color():
         """Tests the TextTools.color() method"""
 
-        test_colors = ["red", "green", "yellow"]
-        test_texts = ["Test1", "Test2", "Test3"]
+        for color_index, color in enumerate(TestTextTools.test_colors):
+            formatted_color = getattr(Fore, color.upper())
+            formatted_text = (
+                f"{formatted_color}"
+                f"{TestTextTools.test_texts[color_index]}{Style.RESET_ALL}"
+            )
 
-        if len(test_colors) != len(test_texts):
-            raise ValueError("The number of colors and texts must be the same")
-
-        iterations = len(test_colors)
-
-        for i in range(iterations):
-            formatted_color = getattr(Fore, test_colors[i].upper())
-            formatted_text = f"{formatted_color}{test_texts[i]}{Style.RESET_ALL}"
-
-            res = TextTools.color(test_texts[i], test_colors[i])
+            res = TextTools.color(TestTextTools.test_texts[color_index], color)
             assert res == formatted_text
 
     @staticmethod
     def test_print(capfd):
         """Tests the TextTools.print() method"""
 
-        test_colors = ["red", "green", "yellow"]
-        test_texts = ["Test1", "Test2", "Test3"]
+        for text_index, text in enumerate(TestTextTools.test_texts):
+            formatted_color = getattr(
+                Fore, TestTextTools.test_colors[text_index].upper()
+            )
+            formatted_text = f"{formatted_color}{text}{Style.RESET_ALL}"
 
-        if len(test_colors) != len(test_texts):
-            raise ValueError("The number of colors and texts must be the same")
-
-        iterations = len(test_colors)
-
-        for i in range(iterations):
-            formatted_color = getattr(Fore, test_colors[i].upper())
-            formatted_text = f"{formatted_color}{test_texts[i]}{Style.RESET_ALL}"
-
-            TextTools.print(test_texts[i], test_colors[i])
+            TextTools.print(text, TestTextTools.test_colors[text_index])
             out, _ = capfd.readouterr()
             assert out == formatted_text + "\n"

@@ -1,9 +1,10 @@
 """This module contains the 'cp' command class."""
 
-from shutil import copytree, copy
 from os import path as os_path
-from utils import TextTools, Error
+from shutil import copy, copytree
+
 from commands._base import Command
+from utils import Error, TextTools
 
 
 class Cp(Command):

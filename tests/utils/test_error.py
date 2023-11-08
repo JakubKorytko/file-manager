@@ -2,7 +2,9 @@
 
 from json import load as json_load
 from os import path
+
 from colorama import Fore, Style
+
 from utils import Error
 
 

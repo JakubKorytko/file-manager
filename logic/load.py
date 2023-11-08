@@ -1,8 +1,9 @@
 """This module is used to read the config.json file and store it in a singleton class."""
-from os import path
-from time import sleep
 from json import load as json_file_load
+from os import path
 from sys import exit as sys_exit
+from time import sleep
+
 from utils import TextTools
 
 # config.json file should be in the same directory as this file
