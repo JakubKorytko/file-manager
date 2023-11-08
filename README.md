@@ -30,7 +30,7 @@ You can check if you have Python installed by running the following command in y
 python --version
 ```
 
-If you don't have Python installed, you can download it from the official website: https://www.python.org/downloads/
+If you don't have Python installed, you can download it from the [official site](https://www.python.org/downloads/).
 
 ## Installation
 
@@ -193,8 +193,11 @@ Here's an example of config.json file:
 
 errorCodes can contain variables in the {} brackets. You can see how to use the command in the "logic/error.py" file. **The same applies to the genericErrorCodes section.**
 
-1. You need to add a class to the **/commands** directory. Name of the class must be the same as the name of the command in the config.json file. The class must derive from the **Command** class and implement the **main** method. The **main** method is called when the command is executed. It takes a list of arguments as a parameter and returns an integer. Look at the **/commands/.example.py** file for an example of how to create a new command class.
-2. You need to add an import statement for the new command class to the **/commands/__init__.py** file. This allows files-manager to find the class when it needs to execute the command. There is a comment in the file that tells you how to add the import statement.
+2. You need to add a class to the **/commands** directory. Name of the class must be the same as the name of the command in the config.json file (case insensitive).
+The class must derive from the **Command** class and implement the **main** method. The **main** method is called when the command is executed. It takes a list of arguments as a parameter and returns an integer.
+Look at the **/commands/.example.py** file for an example of how to create a new command class.
+
+3. You need to add an import statement for the new command class to the **/commands/\_\_init\_\_.py** file. This allows files-manager to find the class when it needs to execute the command. There is a comment in the file that tells you how to add the import statement.
 
 ## License
 
