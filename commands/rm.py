@@ -4,7 +4,7 @@ from os import path as os_path
 from os import remove
 from shutil import rmtree
 
-from files_manager.commands._base import Command
+from commands._base import Command
 from files_manager.src.utils import Error, TextTools
 
 

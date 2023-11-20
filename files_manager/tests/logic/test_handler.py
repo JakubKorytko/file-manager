@@ -13,7 +13,7 @@
 
 from pytest import raises
 
-from files_manager.commands import Command
+from commands import Command
 from files_manager.src import CommandsHandler
 
 

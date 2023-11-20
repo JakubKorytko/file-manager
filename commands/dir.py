@@ -5,7 +5,7 @@ from os import path as os_path
 
 from tabulate import tabulate
 
-from files_manager.commands._base import Command
+from commands._base import Command
 
 
 class Dir(Command):

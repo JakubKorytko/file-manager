@@ -6,6 +6,10 @@ authors = ["JakubKorytko <jakub.korytko@o2.pl>"]
 license = "MIT"
 readme = "README.md"
 include = ["config.json"]
+packages = [
+    { include = "files_manager", from = "." },
+    { include = "commands", from = "." }
+]
 
 [tool.poetry.dependencies]
 python = "^3.11.4"
