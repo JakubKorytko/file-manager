@@ -5,7 +5,7 @@ from os import remove
 from shutil import rmtree
 
 from files_manager.commands._base import Command
-from files_manager.src import Error, TextTools
+from files_manager.src.utils import Error, TextTools
 
 
 class Rm(Command):

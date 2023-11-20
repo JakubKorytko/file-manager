@@ -1,7 +1,7 @@
 """This module contains the 'help' command class."""
 
 from files_manager.commands._base import Command
-from files_manager.src import TextTools
+from files_manager.src.utils import TextTools
 from files_manager.src.logic.load import config
 
 

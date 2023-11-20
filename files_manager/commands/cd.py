@@ -4,7 +4,7 @@ from os import chdir
 from os import path as os_path
 
 from files_manager.commands._base import Command
-from files_manager.src import Error, TextTools
+from files_manager.src.utils import Error, TextTools
 
 
 class Cd(Command):
