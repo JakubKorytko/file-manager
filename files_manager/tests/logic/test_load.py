@@ -11,10 +11,22 @@ class TestConfig:
     """Test the Config class."""
 
     @staticmethod
+    def test_load_data__without_setting_path():
+        """Test the load_data() method without setting the path."""
+
+        config = Config()
+        with raises(ValueError):
+            config.load_data()
+
+    @staticmethod
     def test_load_data():
         """Test the load_data() method."""
 
         config = Config()
+
+        # this is needed to avoid the error - it's intentional
+        config.data_path = "test_data.json"
+
         with patch("builtins.open", mock_open(read_data='{"key": "value"}')):
             config.load_data()
         assert config.is_loaded is True
@@ -25,6 +37,10 @@ class TestConfig:
         """Test the force_reload() method."""
 
         config = Config()
+
+        # this is needed to avoid the error - it's intentional
+        config.data_path = "test_data.json"
+
         with patch("builtins.open", mock_open(read_data='{"key": "value"}')):
             config.load_data()
         assert config.is_loaded is True
@@ -43,6 +59,8 @@ class TestConfig:
         monkeypatch.setattr(Config, "_Config__retry_max_attempts", 1)
 
         config = Config()
+        # this is needed to avoid the error - it's intentional
+        config.data_path = "test_data.json"
 
         with patch("builtins.open", side_effect=FileNotFoundError):
             with raises(SystemExit):

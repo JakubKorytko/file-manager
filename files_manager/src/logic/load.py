@@ -1,15 +1,9 @@
 """This module is used to read the config.json file and store it in a singleton class."""
 from json import load as json_file_load
-from os import path
 from sys import exit as sys_exit
 from time import sleep
 
 from files_manager.src.utils.text import TextTools
-
-# config.json file should be in the same directory as this file
-# this variable is just an information for the user where the file should be
-# change it if you want to move the script along with the config.json file
-CONFIG_PATH = "src/logic/config.json"
 
 
 class Config:
@@ -17,6 +11,7 @@ class Config:
 
     is_loaded = False
     _data = None
+    data_path = None
 
     __retry_attempts = 0
     __retry_max_attempts = 3
@@ -25,12 +20,11 @@ class Config:
     def load_data(self):
         """Loads the config.json file."""
 
-        script_dir = path.dirname(__file__)
-        txt_path = "config.json"
-        file = path.join(script_dir, txt_path)
+        if self.data_path is None:
+            raise ValueError("Data path is not set. Use the data_path setter.")
 
         try:
-            with open(file, "r", encoding="utf-8") as json_file:
+            with open(self.data_path, "r", encoding="utf-8") as json_file:
                 self._data = json_file_load(json_file)
                 self.is_loaded = True
                 self.__retry_attempts = 0
@@ -50,7 +44,7 @@ class Config:
         attempts = self.__retry_attempts
         max_attempts = self.__retry_max_attempts
 
-        print(f"Failed to load {CONFIG_PATH} file.")
+        print(f"Failed to load {self.data_path} file.")
 
         if attempts >= max_attempts:
             output = TextTools.color(
