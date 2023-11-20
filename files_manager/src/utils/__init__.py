@@ -1,6 +1,6 @@
 """Utility functions for the project. Error handling, text processing, etc."""
 
-from utils.error import Error
-from utils.text import TextTools
+from files_manager.src.utils.error import Error
+from files_manager.src.utils.text import TextTools
 
 __all__ = ["Error", "TextTools"]

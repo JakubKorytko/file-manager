@@ -4,12 +4,12 @@ from os import path
 from sys import exit as sys_exit
 from time import sleep
 
-from utils import TextTools
+from files_manager.src.utils.text import TextTools
 
 # config.json file should be in the same directory as this file
 # this variable is just an information for the user where the file should be
 # change it if you want to move the script along with the config.json file
-CONFIG_PATH = "submodules/utils/config.json"
+CONFIG_PATH = "src/logic/config.json"
 
 
 class Config:

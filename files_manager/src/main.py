@@ -1,8 +1,8 @@
 """Main module of the program, contains the main loop and the main function."""
 from colorama import init as colorama_init
 
-from logic import CommandsHandler, config
-from utils import Error, TextTools
+from files_manager.src.logic import CommandsHandler, config
+from files_manager.src.utils import Error, TextTools
 
 
 class FilesManager:

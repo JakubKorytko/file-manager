@@ -1,5 +1,5 @@
 """This module contains the Error class, which is used to display error messages."""
-from utils.text import TextTools
+from files_manager.src.utils.text import TextTools
 
 
 class Error:

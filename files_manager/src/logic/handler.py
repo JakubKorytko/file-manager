@@ -2,7 +2,7 @@
 
 from sys import exit as sys_exit
 
-from commands import Command
+from files_manager.commands import Command
 
 
 class CommandsHandler:

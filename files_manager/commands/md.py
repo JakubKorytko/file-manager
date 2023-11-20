@@ -3,8 +3,8 @@
 from os import makedirs
 from os import path as os_path
 
-from commands._base import Command
-from utils import Error, TextTools
+from files_manager.commands._base import Command
+from files_manager.src import Error, TextTools
 
 
 class Md(Command):
@@ -15,19 +15,19 @@ class Md(Command):
         """Creates a directory."""
 
         error = False
-        pth = TextTools.path(path[0]) if len(path) > 0 else ""
+        dir_path = TextTools.path(path[0]) if len(path) > 0 else ""
 
         if len(path) != 1:
             error = Error.generic(
                 "invalidArguments", {"expected": "1", "actual": len(path)}
             )
-        elif os_path.exists(pth):
+        elif os_path.exists(dir_path):
             error = Error.command("md", "alreadyExists")
 
         if error:
             Error.display(error)
             return 1
 
-        makedirs(pth)
+        makedirs(dir_path)
         print("")
         return 1

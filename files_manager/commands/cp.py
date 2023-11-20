@@ -3,8 +3,8 @@
 from os import path as os_path
 from shutil import copy, copytree
 
-from commands._base import Command
-from utils import Error, TextTools
+from files_manager.commands._base import Command
+from files_manager.src import Error, TextTools
 
 
 class Cp(Command):
