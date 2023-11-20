@@ -14,7 +14,7 @@
 from pytest import raises
 
 from commands import Command
-from files_manager.src import CommandsHandler
+from files_manager.src.logic import CommandsHandler
 
 
 class TestCommandsHandler:
@@ -25,7 +25,8 @@ class TestCommandsHandler:
         """Test for CommandsHandler.set_data() method."""
 
         data = {"commands": ["test"]}
-        CommandsHandler.set_data(data)
+
+        CommandsHandler.set_data(data, Command.__subclasses__())
         assert CommandsHandler.data == data
 
     @staticmethod
@@ -42,7 +43,6 @@ class TestCommandsHandler:
         """Test for CommandsHandler._verify() method."""
 
         data = {"commands": ["___testcommandclass"]}
-        CommandsHandler.set_data(data)
 
         # We need to check if the class is in the list of subclasses
         # we don't use any of the methods,
@@ -58,6 +58,8 @@ class TestCommandsHandler:
 
         monkeypatch.setattr(Command, "__subclasses__", mock_subclasses)
 
+        CommandsHandler.set_data(data, Command.__subclasses__())
+
         CommandsHandler._verify()
 
         captured = capsys.readouterr()
@@ -72,7 +74,7 @@ class TestCommandsHandler:
         """Test for CommandsHandler._convert_if_alias() method."""
 
         data = {"commands": {"test": {"aliases": ["alias"]}}}
-        CommandsHandler.set_data(data)
+        CommandsHandler.set_data(data, Command.__subclasses__())
 
         assert CommandsHandler._convert_if_alias("test") == "test"
         assert CommandsHandler._convert_if_alias("alias") == "test"
@@ -83,7 +85,6 @@ class TestCommandsHandler:
         """Test for CommandsHandler.run() method."""
 
         data = {"commands": ["___testcommandclass"]}
-        CommandsHandler.set_data(data)
 
         class ___TestCommandClass(Command):
             """Test class to insert into Command.__subclasses__()."""
@@ -101,6 +102,8 @@ class TestCommandsHandler:
 
         monkeypatch.setattr(Command, "__subclasses__", mock_subclasses)
         monkeypatch.setattr(CommandsHandler, "_convert_if_alias", mock_convert_if_alias)
+
+        CommandsHandler.set_data(data, Command.__subclasses__())
 
         returned_main_method = CommandsHandler.run("___testcommandclass")
 
