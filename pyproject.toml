@@ -21,6 +21,7 @@ pytest = "^7.4.3"
 black = "^23.11.0"
 pylint = "^3.0.2"
 isort = "^5.12.0"
+mypy = "^1.7.0"
 
 [tool.poetry.scripts]
 files-manager = "files_manager.__main__:main"
