@@ -2,8 +2,6 @@
 
 from sys import exit as sys_exit
 
-from commands import Command
-
 
 class CommandsHandler:
     """Class that handles commands."""
@@ -11,11 +9,12 @@ class CommandsHandler:
     data_loaded = False
 
     @staticmethod
-    def set_data(data):
+    def set_data(data, classes):
         """Sets the data for the class."""
 
         CommandsHandler.data = data
         CommandsHandler.data_loaded = True
+        CommandsHandler.classes = classes
 
     @staticmethod
     def wrong_data_message():
@@ -41,16 +40,16 @@ class CommandsHandler:
             sys_exit(1)
 
         commands = CommandsHandler.data["commands"]
-        subclasses = Command.__subclasses__()
+        classes = CommandsHandler.classes
 
-        if len(subclasses) != len(commands):
+        if len(classes) != len(commands):
             print("Number of commands does not match the number of command classes")
             CommandsHandler.wrong_data_message()
 
-        subclasses_names = [subclass.__name__.lower() for subclass in subclasses]
+        class_names = [class_.__name__.lower() for class_ in classes]
 
         for command in commands:
-            if command not in subclasses_names:
+            if command not in class_names:
                 print(f"Command '{command}' not found in commands directory")
                 CommandsHandler.wrong_data_message()
 
@@ -81,10 +80,10 @@ class CommandsHandler:
 
         command_name = CommandsHandler._convert_if_alias(command)
 
-        subclasses = Command.__subclasses__()
+        classes = CommandsHandler.classes
 
-        for subclass in subclasses:
-            if command_name == subclass.__name__.lower():
-                return subclass.main
+        for class_ in classes:
+            if command_name == class_.__name__.lower():
+                return class_.main
 
         return False
