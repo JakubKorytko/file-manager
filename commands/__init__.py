@@ -9,7 +9,7 @@ from commands.md import Md
 from commands.rename import Rename
 from commands.rm import Rm
 
-# To add a new command import, do it like that:
+# To add a new command, import it here:
 # from commands.<command_name> import <Command_name>
 
 # Then add it to the __all__ list:

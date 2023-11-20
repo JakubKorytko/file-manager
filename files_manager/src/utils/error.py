@@ -7,8 +7,6 @@ class Error:
 
     data_loaded = False
 
-    # Its a false positive, data property is dynamically set by the Config class
-
     @staticmethod
     def not_loaded_message(function_name):
         """Returns an error message when the data is not loaded."""
