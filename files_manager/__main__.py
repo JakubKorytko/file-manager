@@ -7,7 +7,7 @@ from files_manager.src import FilesManager
 
 def main():
     """Starts the program."""
-    script_dir = path.dirname(__file__)
+    script_dir = path.dirname(path.realpath(__file__))
     FilesManager.start(script_dir)
 
 
