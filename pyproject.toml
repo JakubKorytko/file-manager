@@ -5,10 +5,10 @@ description = "Console file manager with basic functions to manipulate files on 
 authors = ["JakubKorytko <jakub.korytko@o2.pl>"]
 license = "MIT"
 readme = "README.md"
-include = ["config.json"]
+include = ["fm_config.json"]
 packages = [
     { include = "files_manager", from = "." },
-    { include = "commands", from = "." }
+    { include = "fm_commands", from = "." }
 ]
 
 [tool.poetry.dependencies]

@@ -1,4 +1,4 @@
-"""This module is used to read the config.json file and store it in a singleton class."""
+"""This module is used to read the fm_config.json file and store it in a singleton class."""
 from json import load as json_file_load
 from sys import exit as sys_exit
 from time import sleep
@@ -7,7 +7,7 @@ from files_manager.src.utils import TextTools
 
 
 class Config:
-    """Singleton class to load and store the config.json file"""
+    """Singleton class to load and store the fm_config.json file"""
 
     is_loaded = False
     _data = None
@@ -18,7 +18,7 @@ class Config:
     __retry_delay = 5
 
     def load_data(self):
-        """Loads the config.json file."""
+        """Loads the fm_config.json file."""
 
         if self.data_path is None:
             raise ValueError("Data path is not set. Use the data_path setter.")
@@ -32,13 +32,13 @@ class Config:
             self.retry_load()
 
     def force_reload(self):
-        """Forces the config.json file to be reloaded. Useful for debugging."""
+        """Forces the fm_config.json file to be reloaded. Useful for debugging."""
 
         self.is_loaded = False
         self.load_data()
 
     def retry_load(self):
-        """Retries to load the config.json file if it failed to load."""
+        """Retries to load the fm_config.json file if it failed to load."""
 
         delay = self.__retry_delay
         attempts = self.__retry_attempts
@@ -70,7 +70,7 @@ class Config:
 
     @property
     def data(self):
-        """Getter for the config.json file. Loads the file if it hasn't been loaded yet."""
+        """Getter for the fm_config.json file. Loads the file if it hasn't been loaded yet."""
 
         if not self.is_loaded:
             self.load_data()

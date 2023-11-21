@@ -3,7 +3,7 @@
 from os import chdir
 from os import path as os_path
 
-from commands._base import Command
+from fm_commands._base import Command
 from files_manager.src.utils import Error, TextTools
 
 

@@ -38,7 +38,7 @@ class Error:
         """Returns a generic error message."""
 
         # The error messages you can run are stored in the "genericErrorCodes"
-        # property (by default in the "config.json" file)
+        # property (by default in the "fm_config.json" file)
 
         # To avoid W0102 (dangerous default value {} as argument)
         if args is None:
@@ -54,7 +54,7 @@ class Error:
         """Returns a command error message."""
 
         # The error messages you can run are stored in the "errorCodes" property of the command
-        # By default in the "config.json" file
+        # By default in the "fm_config.json" file
         # Run it like this: Error.command("command", "errorCode", {"arg": "value"})
 
         # To avoid W0102 (dangerous default value {} as argument)

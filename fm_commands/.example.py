@@ -1,6 +1,6 @@
 """This is example code for your own commands class. It is not used by the program."""
 
-from commands._base import Command
+from fm_commands._base import Command
 
 # | Class needs to inherit from the Command class.
 # | If it doesn't, it won't be loaded by the program.

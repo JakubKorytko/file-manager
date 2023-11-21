@@ -3,7 +3,7 @@ from os import path
 
 from colorama import init as colorama_init
 
-from commands._base import Command
+from fm_commands._base import Command
 from files_manager.src.logic import CommandsHandler, config
 from files_manager.src.utils import Error, TextTools
 
@@ -22,7 +22,7 @@ class FilesManager:
     def set_config_path(script_dir):
         """Sets the path to the config file."""
 
-        txt_path = "config.json"
+        txt_path = "fm_config.json"
         txt_parent_path = f"../{txt_path}"
 
         file = path.join(script_dir, txt_path)
