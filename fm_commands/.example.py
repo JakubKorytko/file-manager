@@ -7,7 +7,7 @@ from fm_commands._base import Command
 
 # from files_manager.src.utils import TextTools, Error
 # | These are the utils modules you will most likely need.
-# | You can read more about them in the utils folder
+# | You can read more about them in the files_manager/src/utils folder
 # | (look at the docstrings).
 
 # | If you need the list of commands, you can import it like this:
@@ -20,7 +20,7 @@ from fm_commands._base import Command
 # | The only purpose of this list is
 # | to for example display all commands in the help message.
 
-# | You can read more about it in the logic folder
+# | You can read more about it in the files_manager/src/logic folder
 # | (look at the docstrings).
 
 
@@ -36,18 +36,15 @@ class Example(Command):
     @staticmethod
     def main(
         *args,
-    ):  # You can specify any number of arguments here, *args is just an example.
+    ):  # Specify one parameter that will contain a list of arguments.
+        # Or use *args if you want to do nothing with them.
         """This is the main method of the command. It is called when the command is executed."""
 
         Command.no_args(args, "example")
         # If you are not using any arguments,
         # use this method at the start of the main method.
-
-        # The first argument is the arguments list,
-        # the second is the name of the command.
-        # The second argument is the name of the command,
-        # it is used in the info message.
-
+        # The first argument is the arguments list.
+        # The second argument is the name of the command.
         # The only purpose of this method is to display a message
         # that the arguments will be ignored.
         # It will not stop the program.
