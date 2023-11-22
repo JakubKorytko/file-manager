@@ -46,11 +46,14 @@ class CommandsHandler:
             print("Number of commands does not match the number of command classes")
             CommandsHandler.wrong_data_message()
 
-        class_names = [class_.__name__.lower() for class_ in classes]
+        class_names = [
+            CommandsHandler.convert_pascal_to_snake_case(class_.__name__)
+            for class_ in classes
+        ]
 
         for command in commands:
             if command not in class_names:
-                print(f"Command '{command}' not found in commands directory")
+                print(f"Command '{command}' not found in the commands directory")
                 CommandsHandler.wrong_data_message()
 
     @staticmethod
@@ -69,6 +72,24 @@ class CommandsHandler:
         return command
 
     @staticmethod
+    def convert_pascal_to_snake_case(name):
+        """Converts a PascalCase name to snake_case."""
+
+        first_iteration = True
+        snake_case = ""
+
+        for char in name:
+            if char.isupper() and not first_iteration:
+                snake_case += "_"
+
+            snake_case += char.lower()
+
+            if first_iteration:
+                first_iteration = False
+
+        return snake_case
+
+    @staticmethod
     def run(command):
         """Runs a command if it exists."""
 
@@ -83,7 +104,7 @@ class CommandsHandler:
         classes = CommandsHandler.classes
 
         for class_ in classes:
-            if command_name == class_.__name__.lower():
+            if command_name == CommandsHandler.convert_pascal_to_snake_case(class_.__name__):
                 return class_.main
 
         return False
