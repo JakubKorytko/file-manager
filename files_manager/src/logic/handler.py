@@ -23,7 +23,7 @@ class CommandsHandler:
         print("Fix it by adding/removing a command class", end=" ")
         print("or adding/removing a command", end=" ")
         print("in the data provided to CommandsHandler.set_data()")
-        print("By default, data is fetched from the config file")
+        print("By default, data is fetched from the fm_config.json file")
         print("Exiting...")
         sys_exit(1)
 
