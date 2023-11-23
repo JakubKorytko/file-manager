@@ -75,17 +75,17 @@ class CommandsHandler:
     def convert_pascal_to_snake_case(name):
         """Converts a PascalCase name to snake_case."""
 
-        first_iteration = True
+        first_occurence = True
         snake_case = ""
 
         for char in name:
-            if char.isupper() and not first_iteration:
-                snake_case += "_"
+            if char.isupper():
+                if first_occurence:
+                    first_occurence = False
+                else:
+                    snake_case += "_"
 
             snake_case += char.lower()
-
-            if first_iteration:
-                first_iteration = False
 
         return snake_case
 
