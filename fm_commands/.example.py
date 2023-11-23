@@ -1,5 +1,12 @@
 """This is example code for your own commands class. It is not used by the program."""
 
+# The name of the file is the name of the command
+# (without the .py extension).
+# Use snake_case.
+
+# You still need to add the command to the fm_config.json file.
+# Read the README.md file for more information.
+
 from fm_commands._base import Command
 
 # | Class needs to inherit from the Command class.
@@ -24,6 +31,8 @@ from fm_commands._base import Command
 # | (look at the docstrings).
 
 
+# The class name must be the same as the file name,
+# but in PascalCase instead of snake_case.
 class Example(Command):
     """Class for the 'help' command. Displays the help message."""
 
