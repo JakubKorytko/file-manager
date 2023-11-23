@@ -42,7 +42,7 @@ class TestCommandsHandler:
     def test_verify(monkeypatch, capsys):
         """Test for CommandsHandler._verify() method."""
 
-        data = {"commands": ["___testcommandclass"]}
+        data = {"commands": ["___test_command_class"]}
 
         # We need to check if the class is in the list of subclasses
         # we don't use any of the methods,
@@ -84,7 +84,7 @@ class TestCommandsHandler:
     def test_run(monkeypatch):
         """Test for CommandsHandler.run() method."""
 
-        data = {"commands": ["___testcommandclass"]}
+        data = {"commands": ["___test_command_class"]}
 
         class ___TestCommandClass(Command):
             """Test class to insert into Command.__subclasses__()."""
@@ -105,7 +105,7 @@ class TestCommandsHandler:
 
         CommandsHandler.set_data(data, Command.__subclasses__())
 
-        returned_main_method = CommandsHandler.run("___testcommandclass")
+        returned_main_method = CommandsHandler.run("___test_command_class")
 
         # We need to compare the actual method, not the result of calling it
         # so we can disable comparison-with-callable warning
