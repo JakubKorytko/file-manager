@@ -138,7 +138,7 @@ By default, the application comes with the following commands:
 To add a new command:
 
 1. Create a new file in the [fm_commands](./fm_commands/) directory or copy [fm_commands/.example.py](./fm_commands/.example.py) and rename it.
-Use the name of the command as the name of the file but follow the snake case naming convention.
+Use the name of the command as the name of the file and follow the **snake_case** naming convention.
 
 1. Add the following import to the file:
 
@@ -147,7 +147,7 @@ Use the name of the command as the name of the file but follow the snake case na
     ```
 
 1. Create a new class that inherits from the [Command](./fm_commands/_base.py) class.
-Give the class the same name as the file but in Pascal case:
+Give the class the same name as the file but in **PascalCase**:
 
     ```python
     class ExampleCommand(Command):
@@ -224,7 +224,7 @@ file in the project root directory.
 
    - Add it to the `commands` dictionary
    - Use the name of the command as the key
-    (the same as the name of the file but without the `.py` extension)
+    **(the same as the name of the file but without the `.py` extension)**
    - Use the following properties:
      - A list of aliases for the command (key: `aliases`)
      - A description of the command (key: `description`)
