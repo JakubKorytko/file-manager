@@ -18,6 +18,7 @@
   - [Usage](#usage)
     - [Prompt](#prompt)
     - [Available commands](#available-commands)
+      - [Reserved commands](#reserved-commands)
   - [Extending the app](#extending-the-app)
     - [Adding new commands](#adding-new-commands)
     - [Adding new generic errors](#adding-new-generic-errors)
@@ -130,6 +131,20 @@ By default, the application comes with the following commands:
   - Arguments:
     - `path` - the path to the file or directory you want to copy
     - `destination` - the path to the destination directory
+
+#### Reserved commands
+
+The following commands are reserved and you cannot create a command with the same name,
+although they do not have their own classes
+and are not listed in the [fm_config.json](./fm_config.json) file:
+
+- `exit` - exit the application
+  - Aliases: none
+  - Arguments:
+    - none
+
+- `___test_command_class` - a command used for testing purposes
+  - **It can't be used in the application**
 
 ## Extending the app
 
