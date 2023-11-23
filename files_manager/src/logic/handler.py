@@ -104,7 +104,9 @@ class CommandsHandler:
         classes = CommandsHandler.classes
 
         for class_ in classes:
-            if command_name == CommandsHandler.convert_pascal_to_snake_case(class_.__name__):
+            if command_name == CommandsHandler.convert_pascal_to_snake_case(
+                class_.__name__
+            ):
                 return class_.main
 
         return False
