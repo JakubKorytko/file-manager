@@ -3,9 +3,9 @@ from os import path
 
 from colorama import init as colorama_init
 
-from fm_commands._base import Command
 from files_manager.src.logic import CommandsHandler, config
 from files_manager.src.utils import Error, TextTools
+from fm_commands._base import Command
 
 
 class FilesManager:

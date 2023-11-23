@@ -3,8 +3,8 @@
 from os import chdir
 from os import path as os_path
 
-from fm_commands._base import Command
 from files_manager.src.utils import Error, TextTools
+from fm_commands._base import Command
 
 
 class Cd(Command):

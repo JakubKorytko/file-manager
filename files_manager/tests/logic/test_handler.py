@@ -13,8 +13,8 @@
 
 from pytest import raises
 
-from fm_commands import Command
 from files_manager.src.logic import CommandsHandler
+from fm_commands import Command
 
 
 class TestCommandsHandler:
