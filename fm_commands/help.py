@@ -25,4 +25,10 @@ class Help(Command):
             TextTools.print_command(command, config.data["commands"][command])
 
         print("")
+
+        TextTools.print_command(
+            "exit", {"description": "exit the program", "aliases": []}
+        )
+
+        print("")
         return 1
