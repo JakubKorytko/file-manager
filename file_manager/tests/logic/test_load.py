@@ -4,7 +4,7 @@ from unittest.mock import mock_open, patch
 
 from pytest import raises
 
-from files_manager.src.logic import Config
+from file_manager.src.logic import Config
 
 
 class TestConfig:

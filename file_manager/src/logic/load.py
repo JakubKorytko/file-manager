@@ -3,7 +3,7 @@ from json import load as json_file_load
 from sys import exit as sys_exit
 from time import sleep
 
-from files_manager.src.utils import TextTools
+from file_manager.src.utils import TextTools
 
 
 class Config:

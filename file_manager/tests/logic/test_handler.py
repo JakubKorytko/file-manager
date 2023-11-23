@@ -13,7 +13,7 @@
 
 from pytest import raises
 
-from files_manager.src.logic import CommandsHandler
+from file_manager.src.logic import CommandsHandler
 from fm_commands import Command
 
 

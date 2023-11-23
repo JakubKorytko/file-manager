@@ -5,7 +5,7 @@ from os import getcwd, path
 
 from colorama import Fore, Style
 
-from files_manager.src.utils import TextTools
+from file_manager.src.utils import TextTools
 
 
 class TestTextTools:

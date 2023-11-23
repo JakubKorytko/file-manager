@@ -5,7 +5,7 @@ from os import path
 
 from colorama import Fore, Style
 
-from files_manager.src.utils import Error
+from file_manager.src.utils import Error
 
 
 class TestError:

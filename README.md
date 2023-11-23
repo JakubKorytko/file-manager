@@ -1,16 +1,16 @@
-# Files Manager
+# File Manager
 
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
 [![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)](https://python-poetry.org/)
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
-[![Run Super-Linter](https://github.com/JakubKorytko/files-manager/actions/workflows/super-linter.yml/badge.svg)](https://github.com/JakubKorytko/files-manager/actions/workflows/super-linter.yml)
-[![Run Unit Tests](https://github.com/JakubKorytko/files-manager/actions/workflows/unit_tests.yml/badge.svg)](https://github.com/JakubKorytko/files-manager/actions/workflows/unit_tests.yml)
+[![Run Super-Linter](https://github.com/JakubKorytko/file-manager/actions/workflows/super-linter.yml/badge.svg)](https://github.com/JakubKorytko/file-manager/actions/workflows/super-linter.yml)
+[![Run Unit Tests](https://github.com/JakubKorytko/file-manager/actions/workflows/unit_tests.yml/badge.svg)](https://github.com/JakubKorytko/file-manager/actions/workflows/unit_tests.yml)
 
 ## Table of Contents
 
-- [Files Manager](#files-manager)
+- [File Manager](#file-manager)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [Prerequisites](#prerequisites)
@@ -34,7 +34,7 @@
 
 ## Introduction
 
-The Files Manager is a Python console application that allows you to manage files and directories.
+The File Manager is a Python console application that allows you to manage files and directories.
 It works much like the `cmd` or `bash` command-line interfaces, but you can easily extend it with your own commands.
 
 It may not seem like a very useful project on its own since you have aliases and scripts in the `cmd` and `bash` command-line interfaces,
@@ -56,13 +56,13 @@ Before you begin, make sure you have the following prerequisites installed on yo
 or download the ZIP file and extract it to a directory of your choice:
 
     ```bash
-    git clone https://github.com/JakubKorytko/files-manager.git
+    git clone https://github.com/JakubKorytko/file-manager.git
     ```
 
 1. Change to the project directory:
 
     ```bash
-    cd files-manager
+    cd file-manager
     ```
 
 1. Run the following command to install the required dependencies:
@@ -74,7 +74,7 @@ or download the ZIP file and extract it to a directory of your choice:
 You can now run the project by executing the following command:
 
 ```bash
-poetry run files-manager
+poetry run file-manager
 ```
 
 ## Usage
@@ -293,10 +293,10 @@ create new key-value pair in the `genericErrorCodes` dictionary in the [fm_confi
 
 ### Using error codes in the commands
 
-To use the error codes in the commands, import the [Error](./files_manager/src/utils/error.py) class:
+To use the error codes in the commands, import the [Error](./file_manager/src/utils/error.py) class:
 
 ```python
-from files_manager.src.utils import Error
+from file_manager.src.utils import Error
 ```
 
 The `Error.command` and `Error.generic` methods return a string with the formatted error message.
@@ -308,7 +308,7 @@ err = Error.command("example_command", "exampleFormattedError", {"example_value"
 Error.display(err)
 ```
 
-The [Error](./files_manager/src/utils/error.py) class is purely informational. It doesn't stop the command from executing.
+The [Error](./file_manager/src/utils/error.py) class is purely informational. It doesn't stop the command from executing.
 
 #### Command-specific errors
 

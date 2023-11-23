@@ -12,13 +12,13 @@ from fm_commands._base import Command
 # | Class needs to inherit from the Command class.
 # | If it doesn't, it won't be loaded by the program.
 
-# from files_manager.src.utils import TextTools, Error
+# from file_manager.src.utils import TextTools, Error
 # | These are the utils modules you will most likely need.
-# | You can read more about them in the files_manager/src/utils folder
+# | You can read more about them in the file_manager/src/utils folder
 # | (look at the docstrings).
 
 # | If you need the list of commands, you can import it like this:
-# from files_manager.src.logic.load import config
+# from file_manager.src.logic.load import config
 
 # | To access the list, use:
 # config.data["commands"]
@@ -27,7 +27,7 @@ from fm_commands._base import Command
 # | The only purpose of this list is
 # | to for example display all commands in the help message.
 
-# | You can read more about it in the files_manager/src/logic folder
+# | You can read more about it in the file_manager/src/logic folder
 # | (look at the docstrings).
 
 

@@ -3,7 +3,7 @@
 from os import path as os_path
 from shutil import copy, copytree
 
-from files_manager.src.utils import Error, TextTools
+from file_manager.src.utils import Error, TextTools
 from fm_commands._base import Command
 
 

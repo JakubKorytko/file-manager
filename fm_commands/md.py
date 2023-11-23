@@ -3,7 +3,7 @@
 from os import makedirs
 from os import path as os_path
 
-from files_manager.src.utils import Error, TextTools
+from file_manager.src.utils import Error, TextTools
 from fm_commands._base import Command
 
 

@@ -3,20 +3,20 @@ from os import path
 
 from colorama import init as colorama_init
 
-from files_manager.src.logic import CommandsHandler, config
-from files_manager.src.utils import Error, TextTools
+from file_manager.src.logic import CommandsHandler, config
+from file_manager.src.utils import Error, TextTools
 from fm_commands._base import Command
 
 
-class FilesManager:
+class FileManager:
     """Main class of the program."""
 
     @staticmethod
     def start(script_dir):
         """Starts the program."""
-        FilesManager.set_config_path(script_dir)
-        FilesManager.init()
-        FilesManager.loop()
+        FileManager.set_config_path(script_dir)
+        FileManager.init()
+        FileManager.loop()
 
     @staticmethod
     def set_config_path(script_dir):
@@ -67,5 +67,5 @@ class FilesManager:
         Error.set_data(config.data)
         CommandsHandler.set_data(config.data, Command.__subclasses__())
 
-        while FilesManager.run(input(TextTools.indicator())):
+        while FileManager.run(input(TextTools.indicator())):
             pass

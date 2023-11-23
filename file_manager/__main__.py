@@ -2,13 +2,13 @@
 
 from os import path
 
-from files_manager.src import FilesManager
+from file_manager.src import FileManager
 
 
 def main():
     """Starts the program."""
     script_dir = path.dirname(path.realpath(__file__))
-    FilesManager.start(script_dir)
+    FileManager.start(script_dir)
 
 
 if __name__ == "__main__":
