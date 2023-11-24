@@ -5,8 +5,8 @@
 
 [![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)](https://python-poetry.org/)
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
-[![Run Super-Linter](https://github.com/JakubKorytko/file-manager/actions/workflows/super-linter.yml/badge.svg)](https://github.com/JakubKorytko/file-manager/actions/workflows/super-linter.yml)
-[![Run Unit Tests](https://github.com/JakubKorytko/file-manager/actions/workflows/unit_tests.yml/badge.svg)](https://github.com/JakubKorytko/file-manager/actions/workflows/unit_tests.yml)
+[![Run Super-Linter](https://github.com/JakubKorytko/file-manager/actions/workflows/super-linter.yml/badge.svg?branch=0.1.0)](https://github.com/JakubKorytko/file-manager/actions/workflows/super-linter.yml?branch=0.1.0)
+[![Run Unit Tests](https://github.com/JakubKorytko/file-manager/actions/workflows/unit_tests.yml/badge.svg?branch=0.1.0)](https://github.com/JakubKorytko/file-manager/actions/workflows/unit_tests.yml?branch=0.1.0)
 
 ## Table of Contents
 
