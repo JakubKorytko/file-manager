@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "file-manager"
-version = "2.0.0"
-description = "Console file manager with basic functions to manipulate files on your disk"
+version = "0.1.0"
+description = "Flexible console application for efficient file management that can be extended with your own commands"
 authors = ["JakubKorytko <jakub.korytko@o2.pl>"]
 license = "MIT"
 readme = "README.md"
